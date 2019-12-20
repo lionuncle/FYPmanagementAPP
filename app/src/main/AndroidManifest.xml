@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ManageEvaluationsActivity"></activity>
+        <activity android:name=".ManageProjectsActivity" />
+        <activity android:name=".ManageStudentActivity" />
+        <activity android:name=".AddAdvisorNameActivity" />
+        <activity android:name=".ManageAdvisorActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

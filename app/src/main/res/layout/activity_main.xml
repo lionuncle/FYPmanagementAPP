@@ -1,26 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/bgapps"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    android:layout_height="match_parent"
+    android:background="@drawable/bgapps">
+
+
+
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="200dp"
+        android:layout_height="wrap_content"
         android:columnCount="2"
-        android:rowCount="2"
-        android:columnOrderPreserved="false">
+        android:columnOrderPreserved="false"
+        android:paddingTop="200dp"
+        android:rowCount="2">
 
-        <com.google.android.material.card.MaterialCardView
+
+        <LinearLayout
+            android:id="@+id/addAdvisorLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/date"
+              />
 
             <TextView
-                android:id="@+id/info_text"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </android.support.v7.widget.CardView>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:elevation="2dp"
+
+                android:text="MANAGE ADVISOR"
+                android:textColor="@color/loginBackground"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/addStudentLayout"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/person" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:elevation="2dp"
+
+                android:text="MANAGE STUDENT"
+                android:textColor="@color/loginBackground"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addProjectLayout"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/bug" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:elevation="2dp"
+
+                android:text="MANAGE PROJECTS"
+                android:textColor="@color/loginBackground"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addEvaluationLayout"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/bookmark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:elevation="2dp"
+
+                android:text="MANAGE EVALUATIONS"
+                android:textColor="@color/loginBackground"
+                android:textSize="15sp" />
+        </LinearLayout>
+
 
     </GridLayout>
-
 
 
 </ScrollView>
