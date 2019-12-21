@@ -1,4 +1,4 @@
-package com.example.fypmanagementapp;
+package com.example.fypmanagementapp.Models;
 
 import java.util.UUID;
 

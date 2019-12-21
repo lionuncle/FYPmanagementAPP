@@ -12,23 +12,23 @@
         android:textSize="30sp"
         android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="10dp"
         android:elevation="6dp"
         android:background="@color/ButtonBackground"
         android:textColor="@color/white"
         />
-    <Button
-        android:id="@+id/removeAdvisorBtn"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:text="REMOVE ADVISOR"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADVISERS:"
         android:textSize="30sp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:elevation="6dp"
-        android:background="@color/ButtonBackground"
-        android:textColor="@color/white"
-        />
+        android:textColor="@color/ButtonBackground"
+        android:layout_margin="10dp"/>
+    <ListView
+        android:layout_width="wrap_content"
+        android:padding="5dp"
+        android:elevation="1dp"
+        android:layout_height="match_parent"
+        android:id="@+id/advisorList"/>
 
 </LinearLayout>
