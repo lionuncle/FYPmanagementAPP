@@ -5,17 +5,17 @@
     android:orientation="vertical"
     android:layout_gravity="center_vertical"
     android:layout_height="200dp"
-    tools:context="Advisor.AddAdvisorNameActivity">
+    tools:context=".Project.addProjectActivity">
     <EditText
-        android:id="@+id/addAdvisorNameText"
+        android:id="@+id/addProjectNameText"
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_vertical"
         android:layout_height="wrap_content"
-        android:hint="Enter Advisor Name"/>
+        android:hint="Enter PROJECT TITLE"/>
     <Button
-        android:id="@+id/addAdvisorNameBtn"
+        android:id="@+id/addProjectNameBtn"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:text="ADD"

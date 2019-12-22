@@ -12,6 +12,9 @@ public class Student {
     public String getName() {
         return name;
     }
+    public final String getTYPE() {
+        return "Student";
+    }
 
     public void setName(String name) {
         this.name = name;

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.example.fypmanagementapp.MainActivity;
@@ -18,7 +19,7 @@ public class ManageAdvisorActivity extends AppCompatActivity {
     Button addAdvisorBtn;
     ListView advisorList;
     AdvisorAdapter advisorAdapter;
-
+    PopupMenu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,6 @@ public class ManageAdvisorActivity extends AppCompatActivity {
             addAdvisorBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     startActivity(new Intent(ManageAdvisorActivity.this, AddAdvisorNameActivity.class));
                 }
             });

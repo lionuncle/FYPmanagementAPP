@@ -13,6 +13,10 @@ public class Advisor {
         return name;
     }
 
+    public final String getTYPE() {
+        return "Advisor";
+    }
+
     public void setName(String name) {
         this.name = name;
     }

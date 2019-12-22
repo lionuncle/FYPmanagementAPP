@@ -12,6 +12,9 @@ public class Project {
     public String getTitle() {
         return title;
     }
+    public final String getTYPE() {
+        return "Project";
+    }
 
     public void setTitle(String title) {
         this.title = title;

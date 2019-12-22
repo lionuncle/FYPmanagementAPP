@@ -17,11 +17,14 @@ import com.example.fypmanagementapp.Student.ManageStudentActivity;
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout addAdvisorLayout, addStudentLayout, addProjectsLayout, addEvaluationLayout;
-    public static SharedPreferences mPrefs;
+    public static SharedPreferences mAdvisorPrefs,mStudentPrefs,mProjectPrefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPrefs = getPreferences(MODE_PRIVATE);
+        mAdvisorPrefs = getSharedPreferences("ADVISOR",MODE_PRIVATE);
+        mStudentPrefs = getSharedPreferences("STUDENT",MODE_PRIVATE);
+        mProjectPrefs = getSharedPreferences("PROJECT",MODE_PRIVATE);
+
 
 
 

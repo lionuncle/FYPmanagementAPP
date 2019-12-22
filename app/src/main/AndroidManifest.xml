@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Evaluation.ManageEvaluationsActivity"></activity>
+        <activity android:name=".Project.addProjectActivity"></activity>
+        <activity android:name=".Student.addStudentActivity" />
+        <activity android:name=".Evaluation.ManageEvaluationsActivity" />
         <activity android:name=".Project.ManageProjectsActivity" />
         <activity android:name=".Student.ManageStudentActivity" />
         <activity android:name=".Advisor.AddAdvisorNameActivity" />
@@ -18,7 +20,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+               <!-- <category android:name="android.intent.category.LAUNCHER" />-->
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
