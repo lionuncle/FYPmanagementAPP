@@ -1,5 +1,6 @@
 package com.example.fypmanagementapp.Repository;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.fypmanagementapp.Models.Advisor;
@@ -9,6 +10,7 @@ import com.google.gson.Gson;
 
 import java.util.LinkedList;
 
+import static android.content.Context.MODE_PRIVATE;
 import static com.example.fypmanagementapp.MainActivity.mAdvisorPrefs;
 import static com.example.fypmanagementapp.MainActivity.mStudentPrefs;
 import static com.example.fypmanagementapp.MainActivity.mProjectPrefs;
@@ -133,5 +135,27 @@ public class Repository {
             Checkjson = mAdvisorPrefs.getString(String.valueOf(i), null);
         }
 
+    }
+    public void saveNewAdvisorList(LinkedList<Advisor> newList, Context context) {
+        SharedPreferences mPref = context.getSharedPreferences("ADVISOR",MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = mPref.edit();
+        for (int i=1; i <= newList.size();i++){
+            prefEditor.remove(String.valueOf(i));
+            prefEditor.commit();
+        }
+        for (int x=0; x<newList.size();x++){
+            Advisor a = newList.get(x);
+            Gson gson = new Gson();
+            String json = gson.toJson(a);
+            int i = 1;
+            String Checkjson = mPref.getString(String.valueOf(i), null);
+            while (Checkjson != null) {
+                i++;
+                Checkjson = mPref.getString(String.valueOf(i), null);
+            }
+            prefEditor.putString(String.valueOf(i), json);
+            prefEditor.commit();
+        }
+        prefEditor.commit();
     }
 }

@@ -5,6 +5,7 @@ import java.util.UUID;
 public class Advisor {
     private String name;
     private final String id;
+    private String projectId = null;
     public Advisor(){
         id = UUID.randomUUID().toString();
     }
@@ -19,6 +20,14 @@ public class Advisor {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public String getId() {

@@ -25,8 +25,9 @@
         android:textColor="@color/ButtonBackground"
         android:layout_margin="10dp"/>
     <ListView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:padding="5dp"
+        android:focusable="false"
         android:elevation="1dp"
         android:layout_height="match_parent"
         android:id="@+id/advisorList"/>

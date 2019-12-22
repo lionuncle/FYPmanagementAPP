@@ -10,7 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fypmanagementapp.Models.Advisor;
+import com.example.fypmanagementapp.Models.Project;
 import com.example.fypmanagementapp.R;
+import com.example.fypmanagementapp.Repository.Repository;
 
 import java.util.LinkedList;
 
@@ -45,23 +47,22 @@ public class AdvisorAdapter extends BaseAdapter {
         TextView name = v.findViewById(R.id.advisorNameListViewITEM);
         name.setText(showList.get(position).getName());
 
+        TextView assign = v.findViewById(R.id.assignListViewITEM);
 
-        Button btnDelete = v.findViewById(R.id.btnDelete);
+        if (Repository.getInstance().getAdvisorList().get(position).getProjectId() != null){
+            Project p = new Project();
+            String projectId = Repository.getInstance().getAdvisorList().get(position).getProjectId();
+            for (int i=0; i< Repository.getInstance().getProjectList().size(); i++)
+                if (Repository.getInstance().getProjectList().get(i).getId().equals(projectId))
+                    p = Repository.getInstance().getProjectList().get(i);
+            assign.setText("Assigned to: "+p.getTitle());
+            assign.setVisibility(View.VISIBLE);
+        }
+        else
+            assign.setVisibility(View.VISIBLE);
+            assign.setText("PROJECT NOT ASSIGNED");
 
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "Delte", Toast.LENGTH_SHORT).show();
-            }
-        });
-        Button btnAssignProject = v.findViewById(R.id.btnAssign);
 
-        btnAssignProject.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
         return v;
     }
 }
