@@ -10,7 +10,6 @@ import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import com.example.fypmanagementapp.MainActivity;
 import com.example.fypmanagementapp.R;
 import com.example.fypmanagementapp.Repository.Repository;
 
@@ -20,33 +19,24 @@ public class ManageAdvisorActivity extends AppCompatActivity {
     ListView advisorList;
     AdvisorAdapter advisorAdapter;
     PopupMenu menu;
+    Button btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_advisor);
 
-        try {
-            addAdvisorBtn = findViewById(R.id.addAdvisorBtn);
-            addAdvisorBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(ManageAdvisorActivity.this, AddAdvisorNameActivity.class));
-                }
-            });
-
-            if (Repository.getInstance().getAdvisorList() != null) {
-                try {
-                    advisorList = findViewById(R.id.advisorList);
-                    advisorAdapter = new AdvisorAdapter(ManageAdvisorActivity.this, Repository.getInstance().getAdvisorList());
-                    advisorList.setAdapter(advisorAdapter);
-                } catch (Exception e) {
-                    Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-                }
+        addAdvisorBtn = findViewById(R.id.addAdvisorBtn);
+        addAdvisorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ManageAdvisorActivity.this, AddAdvisorNameActivity.class));
             }
-        } catch (Exception e) {
-            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-        }
+        });
+
+        advisorList = findViewById(R.id.advisorList);
+        advisorAdapter = new AdvisorAdapter(ManageAdvisorActivity.this, Repository.getInstance().getAdvisorList());
+        advisorList.setAdapter(advisorAdapter);
 
 
     }
