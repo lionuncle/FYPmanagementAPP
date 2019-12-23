@@ -6,10 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fypmanagementapp.Models.Advisor;
+import com.example.fypmanagementapp.Models.Project;
 import com.example.fypmanagementapp.Models.Student;
 import com.example.fypmanagementapp.R;
+import com.example.fypmanagementapp.Repository.Repository;
 
 import java.util.LinkedList;
 
@@ -42,6 +45,25 @@ public class studentAdapter extends BaseAdapter {
         TextView name = v.findViewById(R.id.advisorNameListViewITEM);
         name.setText(showList.get(position).getName());
 
+        TextView assign = v.findViewById(R.id.assignListViewITEM);
+
+        try {
+            if (Repository.getInstance().getStudentList().get(position).getProjectId() != null){
+                Project p = new Project();
+                String projectId = Repository.getInstance().getStudentList().get(position).getProjectId();
+                for (int i=0; i< Repository.getInstance().getProjectList().size(); i++)
+                    if (Repository.getInstance().getProjectList().get(i).getId().equals(projectId))
+                        p = Repository.getInstance().getProjectList().get(i);
+                assign.setText("Project: "+p.getTitle());
+                assign.setVisibility(View.VISIBLE);
+            }
+            else {
+                assign.setVisibility(View.VISIBLE);
+                assign.setText("PROJECT NOT ASSIGNED");
+            }
+        } catch (Exception e) {
+            Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+        }
         return v;
     }
 }

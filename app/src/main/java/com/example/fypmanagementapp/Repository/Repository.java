@@ -100,6 +100,28 @@ public class Repository {
             Checkjson = mStudentPrefs.getString(String.valueOf(i), null);
         }
     }
+    public void saveNewStudentList(LinkedList<Student> newList, Context context) {
+        SharedPreferences mPref = context.getSharedPreferences("STUDENT",MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = mPref.edit();
+        for (int i=1; i <= newList.size();i++){
+            prefEditor.remove(String.valueOf(i));
+            prefEditor.commit();
+        }
+        for (int x=0; x<newList.size();x++){
+            Student s = newList.get(x);
+            Gson gson = new Gson();
+            String json = gson.toJson(s);
+            int i = 1;
+            String Checkjson = mPref.getString(String.valueOf(i), null);
+            while (Checkjson != null) {
+                i++;
+                Checkjson = mPref.getString(String.valueOf(i), null);
+            }
+            prefEditor.putString(String.valueOf(i), json);
+            prefEditor.commit();
+        }
+        prefEditor.commit();
+    }
 
 ////////////////////////////////////////////////************ADVISOR***********/////////////////////////////////////////////////////////////////////////////
     public void addAdvisorToSharedPref(Advisor a){

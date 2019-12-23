@@ -38,9 +38,13 @@ public class ManageStudentActivity extends AppCompatActivity {
         studentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(ManageStudentActivity.this, Repository.getInstance().getStudentList().get(position).getName(), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(ManageStudentActivity.this,StudentDetailActivity.class);
+                i.putExtra("stdId",Repository.getInstance().getStudentList().get(position).getId());
+                startActivity(i);
+                //Toast.makeText(ManageStudentActivity.this, Repository.getInstance().getStudentList().get(position).getName(), Toast.LENGTH_SHORT).show();
             }
         });
+
 
     }
 }

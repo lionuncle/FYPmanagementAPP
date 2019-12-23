@@ -5,6 +5,16 @@ import java.util.UUID;
 public class Student {
     private String name;
     private String id;
+    private String projectId = null;
+
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
     public Student(){
         id = UUID.randomUUID().toString();
     }
