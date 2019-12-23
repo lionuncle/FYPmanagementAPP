@@ -49,18 +49,23 @@ public class AdvisorAdapter extends BaseAdapter {
 
         TextView assign = v.findViewById(R.id.assignListViewITEM);
 
-        if (Repository.getInstance().getAdvisorList().get(position).getProjectId() != null){
-            Project p = new Project();
-            String projectId = Repository.getInstance().getAdvisorList().get(position).getProjectId();
-            for (int i=0; i< Repository.getInstance().getProjectList().size(); i++)
-                if (Repository.getInstance().getProjectList().get(i).getId().equals(projectId))
-                    p = Repository.getInstance().getProjectList().get(i);
-            assign.setText("Assigned to: "+p.getTitle());
-            assign.setVisibility(View.VISIBLE);
+        try {
+            if (Repository.getInstance().getAdvisorList().get(position).getProjectId() != null){
+                Project p = new Project();
+                String projectId = Repository.getInstance().getAdvisorList().get(position).getProjectId();
+                for (int i=0; i< Repository.getInstance().getProjectList().size(); i++)
+                    if (Repository.getInstance().getProjectList().get(i).getId().equals(projectId))
+                        p = Repository.getInstance().getProjectList().get(i);
+                assign.setText("Assigned to: "+p.getTitle());
+                assign.setVisibility(View.VISIBLE);
+            }
+            else {
+                assign.setVisibility(View.VISIBLE);
+                assign.setText("PROJECT NOT ASSIGNED");
+            }
+        } catch (Exception e) {
+            Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
         }
-        else
-            assign.setVisibility(View.VISIBLE);
-            assign.setText("PROJECT NOT ASSIGNED");
 
 
         return v;

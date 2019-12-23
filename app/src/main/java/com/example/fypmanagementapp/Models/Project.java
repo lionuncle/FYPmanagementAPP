@@ -4,9 +4,9 @@ import java.util.UUID;
 
 public class Project {
     private String title;
-    private final String id;
+    private String id;
     public Project(){
-        id = UUID.randomUUID().toString();
+            id = UUID.randomUUID().toString();
     }
 
     public String getTitle() {
@@ -15,7 +15,9 @@ public class Project {
     public final String getTYPE() {
         return "Project";
     }
-
+    public void setId(String id) {
+        this.id = id;
+    }
     public void setTitle(String title) {
         this.title = title;
     }

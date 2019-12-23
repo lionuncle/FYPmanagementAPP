@@ -4,14 +4,18 @@ import java.util.UUID;
 
 public class Advisor {
     private String name;
-    private final String id;
+    private String id;
     private String projectId = null;
     public Advisor(){
-        id = UUID.randomUUID().toString();
+            id = UUID.randomUUID().toString();
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public final String getTYPE() {
