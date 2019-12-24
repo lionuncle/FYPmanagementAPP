@@ -6,6 +6,15 @@ public class Student {
     private String name;
     private String id;
     private String projectId = null;
+    private int marks = -1;
+
+    public int getMarks() {
+        return marks;
+    }
+
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
 
     public String getProjectId() {
         return projectId;
