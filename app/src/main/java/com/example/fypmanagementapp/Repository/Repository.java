@@ -11,9 +11,9 @@ import com.google.gson.Gson;
 import java.util.LinkedList;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.example.fypmanagementapp.MainActivity.mAdvisorPrefs;
-import static com.example.fypmanagementapp.MainActivity.mStudentPrefs;
-import static com.example.fypmanagementapp.MainActivity.mProjectPrefs;
+import static com.example.fypmanagementapp.WhatAreYouActivity.mAdvisorPrefs;
+import static com.example.fypmanagementapp.WhatAreYouActivity.mProjectPrefs;
+import static com.example.fypmanagementapp.WhatAreYouActivity.mStudentPrefs;
 
 public class Repository {
 

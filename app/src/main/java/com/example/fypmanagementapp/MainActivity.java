@@ -16,14 +16,12 @@ import com.example.fypmanagementapp.Student.ManageStudentActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout addAdvisorLayout, addStudentLayout, addProjectsLayout, addEvaluationLayout;
-    public static SharedPreferences mAdvisorPrefs,mStudentPrefs,mProjectPrefs;
+    LinearLayout addAdvisorLayout, addStudentLayout, addProjectsLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAdvisorPrefs = getSharedPreferences("ADVISOR",MODE_PRIVATE);
-        mStudentPrefs = getSharedPreferences("STUDENT",MODE_PRIVATE);
-        mProjectPrefs = getSharedPreferences("PROJECT",MODE_PRIVATE);
+
 
 
 
@@ -32,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         addAdvisorLayout = findViewById(R.id.addAdvisorLayout);
         addStudentLayout = findViewById(R.id.addStudentLayout);
         addProjectsLayout = findViewById(R.id.addProjectLayout);
-        addEvaluationLayout = findViewById(R.id.addEvaluationLayout);
-
         addAdvisorLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,12 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ManageProjectsActivity.class));
             }
         });
-        addEvaluationLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ManageEvaluationsActivity.class));
-            }
-        });
+
 
 
     }

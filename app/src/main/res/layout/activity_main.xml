@@ -107,36 +107,6 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/addEvaluationLayout"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@color/white"
-            android:clickable="true"
-            android:elevation="4dp"
-            android:focusable="true"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:src="@drawable/bookmark" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:elevation="2dp"
-
-                android:text="MANAGE EVALUATIONS"
-                android:textColor="@color/loginBackground"
-                android:textSize="15sp" />
-        </LinearLayout>
 
 
     </GridLayout>

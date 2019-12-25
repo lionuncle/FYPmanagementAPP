@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fypmanagementapp">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Evaluation.addEvaluationActivity"></activity>
+        <activity android:name=".Advisor.AdvisorMain"></activity>
+        <activity android:name=".Student.StudentMain" />
+        <activity android:name=".WhatAreYouActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Evaluation.addEvaluationActivity" />
         <activity android:name=".Student.StudentDetailActivity" />
         <activity android:name=".Advisor.advisorDetailActivity" />
         <activity android:name=".Project.addProjectActivity" />
@@ -29,8 +39,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
