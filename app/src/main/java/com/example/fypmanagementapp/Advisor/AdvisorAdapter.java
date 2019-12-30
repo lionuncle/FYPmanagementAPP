@@ -53,9 +53,11 @@ public class AdvisorAdapter extends BaseAdapter {
             if (Repository.getInstance().getAdvisorList().get(position).getProjectId() != null){
                 Project p = new Project();
                 String projectId = Repository.getInstance().getAdvisorList().get(position).getProjectId();
-                for (int i=0; i< Repository.getInstance().getProjectList().size(); i++)
-                    if (Repository.getInstance().getProjectList().get(i).getId().equals(projectId))
+                for (int i=0; i< Repository.getInstance().getProjectList().size(); i++){
+                    if (Repository.getInstance().getProjectList().get(i).getId().equals(projectId)){
                         p = Repository.getInstance().getProjectList().get(i);
+                    }
+                }
                 assign.setText("Assigned to: "+p.getTitle());
                 assign.setVisibility(View.VISIBLE);
             }
